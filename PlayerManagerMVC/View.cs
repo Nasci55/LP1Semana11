@@ -46,7 +46,15 @@ namespace PlayerManagerMVC
 
         public void ListOfAllPlayers(IEnumerable<Player> ListOfPlayers)
         {
+            Console.WriteLine("\nList of players");
+            Console.WriteLine("-------------\n");
 
+            // Show each player in the enumerable object
+            foreach (Player p in ListOfPlayers)
+            {
+                Console.WriteLine($" -> {p.Name} with a score of {p.Score}");
+            }
+            Console.WriteLine();
         }
     }
 }

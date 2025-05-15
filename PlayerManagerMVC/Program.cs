@@ -72,7 +72,7 @@ namespace PlayerManagerMVC
                         view.AddNewPlayer(playerList);
                         break;
                     case "2":
-                        ListPlayers(playerList);
+                        view.ListOfAllPlayers(playerList);
                         break;
                     case "3":
                         ListPlayersWithScoreGreaterThan();
@@ -115,18 +115,7 @@ namespace PlayerManagerMVC
         /// <param name="playersToList">
         /// An enumerable object of players to show.
         /// </param>
-        private static void ListPlayers(IEnumerable<Player> playersToList)
-        {
-            Console.WriteLine("\nList of players");
-            Console.WriteLine("-------------\n");
 
-            // Show each player in the enumerable object
-            foreach (Player p in playersToList)
-            {
-                Console.WriteLine($" -> {p.Name} with a score of {p.Score}");
-            }
-            Console.WriteLine();
-        }
 
         /// <summary>
         /// Show all players with a score higher than a user-specified value.
@@ -147,7 +136,7 @@ namespace PlayerManagerMVC
                 GetPlayersWithScoreGreaterThan(minScore);
 
             // List all players with score higher than the user-specified value
-            ListPlayers(playersWithScoreGreaterThan);
+            view.ListOfAllPlayers(playersWithScoreGreaterThan);
         }
 
         /// <summary>
