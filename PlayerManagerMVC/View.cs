@@ -27,6 +27,12 @@ namespace PlayerManagerMVC
             playerList.Add(newPlayer);
         }
 
+        public int AskUserForAMinScore()
+        {
+            Console.Write("\nMinimum score player should have? ");
+            return Convert.ToInt32(Console.ReadLine());
+        }
+
         public string DisplayMenu()
         {
             Console.WriteLine("Menu");
@@ -62,6 +68,29 @@ namespace PlayerManagerMVC
                 Console.WriteLine($" -> {p.Name} with a score of {p.Score}");
             }
             Console.WriteLine();
+        }
+
+        public PlayerOrder UserInputForOrder()
+        {
+            Console.WriteLine("Player order");
+            Console.WriteLine("------------");
+            Console.WriteLine(
+                $"{(int)PlayerOrder.ByScore}. Order by score");
+            Console.WriteLine(
+                $"{(int)PlayerOrder.ByName}. Order by name");
+            Console.WriteLine(
+                $"{(int)PlayerOrder.ByNameReverse}. Order by name (reverse)");
+            Console.WriteLine("");
+            Console.Write("> ");
+
+            return Enum.Parse<PlayerOrder>(Console.ReadLine());
+        }
+
+        public void WaitForInput()
+        {
+            Console.Write("\nPress any key to continue...");
+            Console.ReadKey(true);
+            Console.WriteLine("\n");
         }
     }
 }

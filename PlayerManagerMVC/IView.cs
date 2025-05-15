@@ -11,7 +11,10 @@ namespace PlayerManagerMVC
         void AddNewPlayer(List<Player> playerList);
         void LastProgramMessage();
         void ListOfAllPlayers(IEnumerable<Player> ListOfPlayers);
+        int AskUserForAMinScore();
         void ErrorMessage();
+        void WaitForInput();
+        PlayerOrder UserInputForOrder();
 
     }
 }
