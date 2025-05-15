@@ -81,7 +81,7 @@ namespace PlayerManagerMVC
                         SortPlayerList();
                         break;
                     case "0":
-                        Console.WriteLine("Bye!");
+                        view.LastProgramMessage();
                         break;
                     default:
                         Console.Error.WriteLine("\n>>> Unknown option! <<<\n");

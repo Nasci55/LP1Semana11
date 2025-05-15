@@ -41,6 +41,11 @@ namespace PlayerManagerMVC
 
         public void LastProgramMessage()
         {
+            Console.WriteLine("Bye!");
+        }
+
+        public void ListOfAllPlayers(IEnumerable<Player> ListOfPlayers)
+        {
 
         }
     }
