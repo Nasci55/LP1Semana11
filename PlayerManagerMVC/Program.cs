@@ -5,8 +5,14 @@ using System.Threading.Tasks;
 
 namespace PlayerManagerMVC
 {
-    public class Controller
+    public class Program
     {
+        private static void Main(string[] args)
+        {
+            Controller contr = new Controller();
+            IView view = new View();
 
+            contr.Start();
+        }
     }
 }
