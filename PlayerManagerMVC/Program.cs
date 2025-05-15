@@ -61,8 +61,8 @@ namespace PlayerManagerMVC
             do
             {
                 // Show menu and get user option
-                view.DisplayMenu();
-                option = Console.ReadLine();
+                option = view.DisplayMenu();
+
 
                 // Determine the option specified by the user and act on it
                 switch (option)

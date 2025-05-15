@@ -7,7 +7,7 @@ namespace PlayerManagerMVC
 {
     public interface IView
     {
-        void DisplayMenu();
+        string DisplayMenu();
         void AddNewPlayer(List<Player> playerList);
         void LastProgramMessage();
         void ListOfAllPlayers(IEnumerable<Player> ListOfPlayers);

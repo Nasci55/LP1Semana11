@@ -27,7 +27,7 @@ namespace PlayerManagerMVC
             playerList.Add(newPlayer);
         }
 
-        public void DisplayMenu()
+        public string DisplayMenu()
         {
             Console.WriteLine("Menu");
             Console.WriteLine("----\n");
@@ -37,6 +37,7 @@ namespace PlayerManagerMVC
             Console.WriteLine("4. Sort players");
             Console.WriteLine("0. Quit\n");
             Console.Write("Your choice > ");
+            return Console.ReadLine();
         }
 
         public void ErrorMessage()
