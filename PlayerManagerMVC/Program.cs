@@ -69,7 +69,7 @@ namespace PlayerManagerMVC
                 {
                     case "1":
                         // Insert player
-                        InsertPlayer();
+                        view.AddNewPlayer(playerList);
                         break;
                     case "2":
                         ListPlayers(playerList);
@@ -104,25 +104,7 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Inserts a new player in the player list.
         /// </summary>
-        private void InsertPlayer()
-        {
-            // Variables
-            string name;
-            int score;
-            Player newPlayer;
 
-            // Ask for player info
-            Console.WriteLine("\nInsert player");
-            Console.WriteLine("-------------\n");
-            Console.Write("Name: ");
-            name = Console.ReadLine();
-            Console.Write("Score: ");
-            score = Convert.ToInt32(Console.ReadLine());
-
-            // Create new player and add it to list
-            newPlayer = new Player(name, score);
-            playerList.Add(newPlayer);
-        }
 
         /// <summary>
         /// Show all players in a list of players. This method can be static

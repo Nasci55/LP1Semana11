@@ -9,6 +9,8 @@ namespace PlayerManagerMVC
     {
         void DisplayMenu();
 
+        void AddNewPlayer(List<Player> playerList);
 
+        void LastProgramMessage();
     }
 }

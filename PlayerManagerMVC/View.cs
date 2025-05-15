@@ -7,6 +7,26 @@ namespace PlayerManagerMVC
 {
     public class View : IView
     {
+        public void AddNewPlayer(List<Player> playerList)
+        {
+            // Variables
+            string name;
+            int score;
+            Player newPlayer;
+
+            // Ask for player info
+            Console.WriteLine("\nInsert player");
+            Console.WriteLine("-------------\n");
+            Console.Write("Name: ");
+            name = Console.ReadLine();
+            Console.Write("Score: ");
+            score = Convert.ToInt32(Console.ReadLine());
+
+            // Create new player and add it to list
+            newPlayer = new Player(name, score);
+            playerList.Add(newPlayer);
+        }
+
         public void DisplayMenu()
         {
             Console.WriteLine("Menu");
@@ -17,6 +37,11 @@ namespace PlayerManagerMVC
             Console.WriteLine("4. Sort players");
             Console.WriteLine("0. Quit\n");
             Console.Write("Your choice > ");
+        }
+
+        public void LastProgramMessage()
+        {
+
         }
     }
 }
