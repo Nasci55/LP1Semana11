@@ -84,7 +84,7 @@ namespace PlayerManagerMVC
                         view.LastProgramMessage();
                         break;
                     default:
-                        Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
+                        view.ErrorMessage();
                         break;
                 }
 
@@ -96,25 +96,6 @@ namespace PlayerManagerMVC
                 // Loop keeps going until players choses to quit (option 4)
             } while (option != "0");
         }
-
-        /// <summary>
-        /// Shows the main menu.
-        /// </summary>
-
-        /// <summary>
-        /// Inserts a new player in the player list.
-        /// </summary>
-
-
-        /// <summary>
-        /// Show all players in a list of players. This method can be static
-        /// because it doesn't depend on anything associated with an instance
-        /// of the program. Namely, the list of players is given as a parameter
-        /// to this method.
-        /// </summary>
-        /// <param name="playersToList">
-        /// An enumerable object of players to show.
-        /// </param>
 
 
         /// <summary>

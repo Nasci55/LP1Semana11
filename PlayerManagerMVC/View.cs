@@ -39,6 +39,12 @@ namespace PlayerManagerMVC
             Console.Write("Your choice > ");
         }
 
+        public void ErrorMessage()
+        {
+            Console.Error.WriteLine("\n>>> Unknown option! <<<\n");
+
+        }
+
         public void LastProgramMessage()
         {
             Console.WriteLine("Bye!");
