@@ -11,5 +11,9 @@ classDiagram
     class `PlayerOrder`
 
     IView <|-- View
-
+    Player *-- CompareByName
+    program <-- Controller
+    Controller <--> View
+    Controller <-- PlayerOrder
+    Controller <-- Player 
     ```

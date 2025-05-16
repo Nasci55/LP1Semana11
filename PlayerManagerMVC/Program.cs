@@ -10,7 +10,6 @@ namespace PlayerManagerMVC
         private static void Main(string[] args)
         {
             Controller contr = new Controller();
-            IView view = new View();
 
             contr.Start();
         }
