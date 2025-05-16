@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 
-namespace PlayerManagerMVC
+namespace PlayerManagerMVC2
 {
     /// <summary>
     /// The player listing program.
@@ -19,6 +20,7 @@ namespace PlayerManagerMVC
 
         private View view;
 
+
         /// <summary>
         /// Program begins here.
         /// </summary>
@@ -28,19 +30,29 @@ namespace PlayerManagerMVC
         /// <summary>
         /// Creates a new instance of the player listing program.
         /// </summary>
-        public Controller()
+        public Controller(string path)
         {
             // Initialize player comparers
             compareByName = new CompareByName(true);
             compareByNameReverse = new CompareByName(false);
             view = new View();
 
-            // Initialize the player list with two players using collection
-            // initialization syntax
-            playerList = new List<Player>() {
-                new Player("Best player ever", 100),
-                new Player("An even better player", 500)
-            };
+            if (path == null)
+            {
+                view.ErrorMessage();
+            }
+
+            string[] nameList = File.ReadAllLines(path);
+
+            playerList = new List<Player>();
+
+            foreach (string player in nameList)
+            {
+                string[] playerDivided = player.Split(",");
+
+                playerList.Add
+                (new Player(playerDivided[0], Convert.ToInt32(playerDivided[1].Trim())));
+            }
         }
 
         /// <summary>
