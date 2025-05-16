@@ -7,6 +7,16 @@ namespace GuessTheWord
 {
     public interface IView
     {
-        
+        void userGuessedTheWord(string chosenWord);
+
+        string playerGuess();
+
+        void playerGuessedRight(string chosenWord);
+
+        void playerFailed();
+
+        void hintToThePlayer(string hint, char[] display);
+
+
     }
 }

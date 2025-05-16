@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using GuessTheWord;
 
 public class Program
 {
@@ -19,6 +20,7 @@ public class Program
             { "microscope", "scientific instrument" }
         };
 
+        IView view = new View();
         // Select a random word
         Random rand = new Random();
         List<string> words = new List<string>(wordsWithHints.Keys);
@@ -46,21 +48,20 @@ public class Program
             display[i] = chosenWord[i];
         }
 
-        Console.WriteLine("Guess the full word!");
-        Console.WriteLine($"Hint: It's a {hint}.");
-        Console.WriteLine($"Word: {new string(display)}");
+        view.hintToThePlayer(hint, display);
+
 
         string guess;
         do
         {
-            Console.Write("Your guess: ");
-            guess = Console.ReadLine().Trim().ToLower();
+            guess = view.playerGuess();
 
             if (guess != chosenWord)
-                Console.WriteLine("Incorrect. Try again.");
-        } while (guess != chosenWord);
+                view.playerFailed();
 
-        Console.WriteLine("Correct! Well done!");
-        Console.WriteLine($"The word was \"{chosenWord}\".");
+        } while (guess != chosenWord);
+        view.playerGuessedRight(chosenWord);
+
+
     }
 }
