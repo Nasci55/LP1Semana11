@@ -18,7 +18,7 @@ namespace PlayerManagerMVC2
         // Comparer for comparing player by name (reverse alphabetical order)
         private readonly IComparer<Player> compareByNameReverse;
 
-        private View view;
+        private IView view;
 
 
         /// <summary>
@@ -30,17 +30,12 @@ namespace PlayerManagerMVC2
         /// <summary>
         /// Creates a new instance of the player listing program.
         /// </summary>
-        public Controller(string path)
+        public Controller(IView view, string path)
         {
             // Initialize player comparers
             compareByName = new CompareByName(true);
             compareByNameReverse = new CompareByName(false);
-            view = new View();
-
-            if (path == null)
-            {
-                view.ErrorMessage();
-            }
+            this.view = view;
 
             string[] nameList = File.ReadAllLines(path);
 
@@ -51,7 +46,7 @@ namespace PlayerManagerMVC2
                 string[] playerDivided = player.Split(",");
 
                 playerList.Add
-                (new Player(playerDivided[0], Convert.ToInt32(playerDivided[1].Trim())));
+                (new Player(playerDivided[0].Trim(), Convert.ToInt32(playerDivided[1].Trim())));
             }
         }
 
