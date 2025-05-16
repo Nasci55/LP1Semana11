@@ -7,15 +7,15 @@ namespace GuessTheWord
 {
     public interface IView
     {
-        void userGuessedTheWord(string chosenWord);
+        void UserGuessedTheWord(string chosenWord);
 
-        string playerGuess();
+        string PlayerGuess();
 
-        void playerGuessedRight(string chosenWord);
+        void PlayerGuessedRight(string chosenWord);
 
-        void playerFailed();
+        void PlayerFailed();
 
-        void hintToThePlayer(string hint, char[] display);
+        void HintToThePlayer(string hint, char[] display);
 
 
     }
