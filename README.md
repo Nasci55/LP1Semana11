@@ -1,4 +1,4 @@
-# UML Graph WordScramble
+# UML Graph
 
 ``` mermaid
 classDiagram
